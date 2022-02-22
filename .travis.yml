@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.8"
+  - "3.9"
+before_install:
+  - cd ..
+  - git clone --depth=1 --branch=petercord https://github.com/IlhamMansiez/Petercord.git Petercord
+  - mv Plugins/plugins/ Petercord/petercord/plugins/unof_plugins/
+  - cp -r Plugins/resources/* Petercord/resources/
+install:
+  - pip install -r Petercord/requirements.txt
+  - pip install -r Plugins/requirements.txt
+before_script:
+  - rm -rf Plugins/
+  - cd Petercord
+  - mkdir -p logs
+script:
+  - python -m tests
