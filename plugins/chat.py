@@ -27,7 +27,7 @@ def mention_html(user_id, name):
 @petercord.on_cmd("join", about={
     'header': "Join chat",
     'petercord': "{tr}join [chat username | reply to Chat username Text]",
-    'examples': "{tr}join UserGeOt"})
+    'examples': "{tr}join TeamsquadUserbotSupport"})
 async def join_chat(message: Message):
     """ Join chat """
     replied = message.reply_to_message
